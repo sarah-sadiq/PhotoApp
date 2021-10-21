@@ -7,18 +7,22 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainPresenter mPresenter;
+    MainContract.Presenter mPresenter;
+    MainContract.View mView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mPresenter = new MainPresenter();
+        mView = (MainContract.View) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerViewMain);
+        mPresenter.setView(mView);
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        mPresenter.start();
+        mPresenter.startPresenter();
     }
 
     @Override
