@@ -1,20 +1,14 @@
 package com.example.photoapp;
 
-public class MainPresenter {
+public class MainPresenter implements MainContract.Presenter {
 
-    private MainModel mModel;
-    private MainView mView;
+    MainContract.View mView;
 
-    public MainPresenter(){
-        mModel = new MainModel();
-    }
+    @Override
+    public void startPresenter(){ }
 
-    public void start(){
-
-    }
-
-    public void setView(MainView view){
+    @Override
+    public void setView(MainContract.View view) {
         mView = view;
     }
-
 }
