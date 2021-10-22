@@ -1,4 +1,4 @@
-package com.example.photoapp;
+package com.example.photoapp.FilterActivity;
 
 import android.os.Bundle;
 
@@ -8,21 +8,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.photoapp.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MainViewFragment#newInstance} factory method to
+ * Use the {@link FilterrViewFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainViewFragment extends Fragment implements MainContract.View {
+public class FilterrViewFragment extends Fragment {
 
-    MainContract.Presenter mPresenter;
-
-    public MainViewFragment() {
+    public FilterrViewFragment() {
         // Required empty public constructor
     }
 
-    public static MainViewFragment newInstance(String param1, String param2) {
-        MainViewFragment fragment = new MainViewFragment();
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @return A new instance of fragment FilterrViewFragment.
+     */
+    public static FilterrViewFragment newInstance(String param1, String param2) {
+        FilterrViewFragment fragment = new FilterrViewFragment();
         return fragment;
     }
 
@@ -35,13 +41,8 @@ public class MainViewFragment extends Fragment implements MainContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_main_view, container, false);
+        View root = inflater.inflate(R.layout.fragment_filterr_view, container, false);
 
         return root;
-    }
-
-    @Override
-    public void setPresenter(MainContract.Presenter presenter) {
-        mPresenter = presenter;
     }
 }

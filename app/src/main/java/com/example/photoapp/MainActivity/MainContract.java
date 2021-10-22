@@ -1,4 +1,4 @@
-package com.example.photoapp;
+package com.example.photoapp.MainActivity;
 
 public interface MainContract {
     public interface Presenter {

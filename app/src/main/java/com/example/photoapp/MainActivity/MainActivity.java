@@ -1,9 +1,10 @@
-package com.example.photoapp;
+package com.example.photoapp.MainActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+
+import com.example.photoapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,6 @@
-package com.example.photoapp;
+package com.example.photoapp.MainActivity;
+
+import com.example.photoapp.MainActivity.MainContract;
 
 public class MainPresenter implements MainContract.Presenter {
 
