@@ -1,9 +1,10 @@
-package com.example.photoapp;
+package com.example.photoapp.MainActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+
+import com.example.photoapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mPresenter = new MainPresenter();
-        mView = (MainContract.View) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerViewMain);
+        mView = (MainContract.View) getSupportFragmentManager().findFragmentById(R.id.fcvMain);
         mPresenter.setView(mView);
     }
 
@@ -26,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
     }
-
-
     }
