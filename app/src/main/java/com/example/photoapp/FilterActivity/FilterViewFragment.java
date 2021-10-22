@@ -12,12 +12,13 @@ import com.example.photoapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FilterrViewFragment#newInstance} factory method to
+ * Use the {@link FilterViewFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FilterrViewFragment extends Fragment {
+public class FilterViewFragment extends Fragment implements FilterContract.View {
+    private FilterContract.Presenter mPresenter;
 
-    public FilterrViewFragment() {
+    public FilterViewFragment() {
         // Required empty public constructor
     }
 
@@ -25,10 +26,10 @@ public class FilterrViewFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment FilterrViewFragment.
+     * @return A new instance of fragment FilterViewFragment.
      */
-    public static FilterrViewFragment newInstance(String param1, String param2) {
-        FilterrViewFragment fragment = new FilterrViewFragment();
+    public static FilterViewFragment newInstance(String param1, String param2) {
+        FilterViewFragment fragment = new FilterViewFragment();
         return fragment;
     }
 
@@ -41,8 +42,13 @@ public class FilterrViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_filterr_view, container, false);
+        View root = inflater.inflate(R.layout.fragment_filter_view, container, false);
 
         return root;
+    }
+
+    @Override
+    public void setPresenter(FilterContract.Presenter presenter) {
+        mPresenter = presenter;
     }
 }

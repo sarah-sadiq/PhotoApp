@@ -8,7 +8,7 @@
     tools:context=".MainActivity.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerViewMain"
+        android:id="@+id/fcvMain"
         android:name="com.example.photoapp.MainActivity.MainViewFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"

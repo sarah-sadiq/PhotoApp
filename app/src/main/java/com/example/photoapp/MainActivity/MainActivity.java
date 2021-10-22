@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mPresenter = new MainPresenter();
-        mView = (MainContract.View) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerViewMain);
+        mView = (MainContract.View) getSupportFragmentManager().findFragmentById(R.id.fcvMain);
         mPresenter.setView(mView);
     }
 
@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
     }
-
-
     }

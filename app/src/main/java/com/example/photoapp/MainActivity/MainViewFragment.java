@@ -1,15 +1,19 @@
 package com.example.photoapp.MainActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.photoapp.FilterActivity.FilterActivity;
 import com.example.photoapp.R;
+import com.example.photoapp.SettingsActivity.SettingsActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,14 +23,6 @@ import com.example.photoapp.R;
 public class MainViewFragment extends Fragment implements MainContract.View {
 
     MainContract.Presenter mPresenter;
-    Button keepButton;
-    Button deleteButton;
-    Button undoButton;
-    Button albumsButton;
-    Button shareButton;
-    Button settingsButton;
-    Button filterButton;
-
 
     public MainViewFragment() {
         // Required empty public constructor
@@ -43,57 +39,63 @@ public class MainViewFragment extends Fragment implements MainContract.View {
     }
 
     @Override
+    public void onResume(){
+        super.onResume();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_main_view, container, false);
-        keepButton = root.findViewById(R.id.ibKeep);
+
+        ImageButton keepButton = root.findViewById(R.id.ibKeep);
         keepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        deleteButton = root.findViewById(R.id.ibDelete);
+        ImageButton deleteButton = root.findViewById(R.id.ibDelete);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        undoButton = root.findViewById(R.id.ibUndo);
+        ImageButton undoButton = root.findViewById(R.id.ibUndo);
         undoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        albumsButton = root.findViewById(R.id.ibAlbums);
+        ImageButton albumsButton = root.findViewById(R.id.ibAlbums);
         albumsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        shareButton = root.findViewById(R.id.ibShare);
+        ImageButton shareButton = root.findViewById(R.id.ibShare);
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        settingsButton = root.findViewById(R.id.ibSettings);
+        ImageButton settingsButton = root.findViewById(R.id.ibSettings);
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mPresenter.sendSettingsClicked();
             }
         });
-        filterButton = root.findViewById(R.id.ibFilter);
+        ImageButton filterButton = root.findViewById(R.id.ibFilter);
         filterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mPresenter.sendFilterClicked();
             }
         });
         return root;
@@ -102,5 +104,19 @@ public class MainViewFragment extends Fragment implements MainContract.View {
     @Override
     public void setPresenter(MainContract.Presenter presenter) {
         mPresenter = presenter;
+    }
+
+    @Override
+    public void startFilterActivity() {
+        Intent filterIntent = new Intent();
+        filterIntent.setClass(getActivity(), FilterActivity.class);
+        startActivity(filterIntent);
+    }
+
+    @Override
+    public void startSettingsActivity() {
+        Intent settingsIntent = new Intent();
+        settingsIntent.setClass(getActivity(), SettingsActivity.class);
+        startActivity(settingsIntent);
     }
 }

@@ -3,6 +3,7 @@ package com.example.photoapp.SettingsActivity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,8 @@ import com.example.photoapp.R;
  * Use the {@link SettingsViewFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SettingsViewFragment extends Fragment {
+public class SettingsViewFragment extends Fragment implements SettingsContract.View {
+    SettingsContract.Presenter mPresenter;
 
     public SettingsViewFragment() {
         // Required empty public constructor
@@ -38,11 +40,21 @@ public class SettingsViewFragment extends Fragment {
     }
 
     @Override
+    public void onResume(){
+        super.onResume();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_settings_view, container, false);
 
         return root;
+    }
+
+    @Override
+    public void setPresenter(SettingsContract.Presenter presenter) {
+        mPresenter = presenter;
     }
 }
