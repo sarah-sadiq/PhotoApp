@@ -12,4 +12,9 @@ public class SettingsPresenter implements SettingsContract.Presenter {
     public void startPresenter() {
         mView.setPresenter(this);
     }
+
+    @Override
+    public void notifyBackClicked() {
+        mView.finishActivity();
+    }
 }

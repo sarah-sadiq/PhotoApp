@@ -8,7 +8,11 @@
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/fragment_filter_view.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/fragment_main_view.xml" value="0.2921195652173913" />
-        <entry key="app/src/main/res/layout/fragment_settings_view.xml" value="0.15526849037487336" />
+        <entry key="app/src/main/res/layout/fragment_settings_view.xml" value="0.25253973193565665" />
+        <entry key="app/src/main/res/layout/settings_menu.xml" value="0.28804347826086957" />
+        <entry key="app/src/main/res/menu/filter_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/settings_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

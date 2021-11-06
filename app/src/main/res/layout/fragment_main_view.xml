@@ -57,46 +57,23 @@
             android:layout_marginBottom="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintBottom_toTopOf="@+id/ibKeep"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ibFilter"
+            app:layout_constraintTop_toBottomOf="@+id/ibUndo"
             tools:src="@tools:sample/backgrounds/scenic" />
-
-        <ImageButton
-            android:id="@+id/ibFilter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            app:layout_constraintBottom_toTopOf="@+id/ivPhotoCard"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/ibSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="32dp"
-            android:src="@android:drawable/ic_menu_preferences"
-            app:layout_constraintBottom_toTopOf="@+id/ivPhotoCard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/ibUndo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:src="@android:drawable/ic_menu_revert"
-            app:layout_constraintBottom_toTopOf="@+id/ivPhotoCard"
-            app:layout_constraintEnd_toStartOf="@+id/ibSettings"
-            app:layout_constraintStart_toEndOf="@+id/ibFilter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -1,13 +1,20 @@
 package com.example.photoapp.FilterActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.photoapp.MainActivity.MainActivity;
 import com.example.photoapp.R;
 
 /**
@@ -17,6 +24,7 @@ import com.example.photoapp.R;
  */
 public class FilterViewFragment extends Fragment implements FilterContract.View {
     private FilterContract.Presenter mPresenter;
+    Button backButtonF;
 
     public FilterViewFragment() {
         // Required empty public constructor
@@ -36,6 +44,7 @@ public class FilterViewFragment extends Fragment implements FilterContract.View 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -48,7 +57,31 @@ public class FilterViewFragment extends Fragment implements FilterContract.View 
     }
 
     @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.filter_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.back:  {
+                // navigate to main screen
+                mPresenter.notifyBackClicked();
+                return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void setPresenter(FilterContract.Presenter presenter) {
         mPresenter = presenter;
+    }
+
+    @Override
+    public void finishActivity() {
+        getActivity().finish();
+
     }
 }

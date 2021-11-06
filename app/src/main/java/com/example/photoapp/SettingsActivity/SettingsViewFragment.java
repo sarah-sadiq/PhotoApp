@@ -1,13 +1,19 @@
 package com.example.photoapp.SettingsActivity;
 
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toolbar;
 
 import com.example.photoapp.R;
 
@@ -18,6 +24,7 @@ import com.example.photoapp.R;
  */
 public class SettingsViewFragment extends Fragment implements SettingsContract.View {
     SettingsContract.Presenter mPresenter;
+    Button backButtonS;
 
     public SettingsViewFragment() {
         // Required empty public constructor
@@ -37,6 +44,7 @@ public class SettingsViewFragment extends Fragment implements SettingsContract.V
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -54,7 +62,30 @@ public class SettingsViewFragment extends Fragment implements SettingsContract.V
     }
 
     @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.settings_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.back:  {
+                // navigate to main screen
+                mPresenter.notifyBackClicked();
+                return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void setPresenter(SettingsContract.Presenter presenter) {
         mPresenter = presenter;
+    }
+
+    @Override
+    public void finishActivity() {
+        getActivity().finish();
     }
 }
