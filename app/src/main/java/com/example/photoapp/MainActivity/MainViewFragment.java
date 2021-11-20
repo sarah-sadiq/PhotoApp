@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,7 +12,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.photoapp.FilterActivity.FilterActivity;
 import com.example.photoapp.R;
@@ -27,6 +27,7 @@ import com.example.photoapp.SettingsActivity.SettingsActivity;
 public class MainViewFragment extends Fragment implements MainContract.View {
 
     MainContract.Presenter mPresenter;
+    ImageView imageView;
 
     public MainViewFragment() {
         // Required empty public constructor
@@ -54,39 +55,41 @@ public class MainViewFragment extends Fragment implements MainContract.View {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_main_view, container, false);
 
-        ImageButton keepButton = root.findViewById(R.id.ibKeep);
+        imageView = root.findViewById(R.id.ivPhotoCard);
+        
+        Button keepButton = root.findViewById(R.id.btKeep);
         keepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO
             }
         });
-        ImageButton deleteButton = root.findViewById(R.id.ibDelete);
+        Button deleteButton = root.findViewById(R.id.btDelete);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO
             }
         });
-        ImageButton undoButton = root.findViewById(R.id.ibUndo);
+        Button undoButton = root.findViewById(R.id.btUndo);
         undoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO
             }
         });
-        ImageButton albumsButton = root.findViewById(R.id.ibAlbums);
+        Button albumsButton = root.findViewById(R.id.btAlbum);
         albumsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO
             }
         });
-        ImageButton shareButton = root.findViewById(R.id.ibShare);
+        Button shareButton = root.findViewById(R.id.btShare);
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO
             }
         });
         return root;

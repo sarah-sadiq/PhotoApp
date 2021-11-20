@@ -10,70 +10,102 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/ibKeep"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btShare"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/upload__1_"
+            app:iconSize="24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:src="?android:attr/textCheckMark"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/ibShare"
-            app:layout_constraintStart_toEndOf="@+id/ibDelete" />
-
-        <ImageButton
-            android:id="@+id/ibShare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:src="@android:drawable/stat_sys_upload"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ibKeep" />
+            android:background="@drawable/custom_button"
+            app:backgroundTint="#D09FFF" />
 
-        <ImageButton
-            android:id="@+id/ibDelete"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btKeep"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/check"
+            app:iconSize="24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:src="@android:drawable/ic_menu_delete"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/ibKeep"
-            app:layout_constraintStart_toEndOf="@+id/ibAlbums" />
+            app:layout_constraintStart_toEndOf="@+id/btAlbum"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="#D09FFF" />
 
-        <ImageButton
-            android:id="@+id/ibAlbums"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btAlbum"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/gallery"
+            app:iconSize="24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/ibDelete"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="#D09FFF" />
+
+        <Button
+            android:id="@+id/btDelete"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/check"
+            app:iconSize="24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btShare"
+            app:layout_constraintStart_toEndOf="@+id/btKeep"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="#D09FFF" />
 
         <ImageView
             android:id="@+id/ivPhotoCard"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/ibKeep"
+            app:layout_constraintBottom_toTopOf="@+id/btKeep"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ibUndo"
+            app:layout_constraintTop_toBottomOf="@+id/btUndo"
             tools:src="@tools:sample/backgrounds/scenic" />
 
-        <ImageButton
-            android:id="@+id/ibUndo"
+        <Button
+            android:id="@+id/btUndo"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/undo_alt"
+            app:iconSize="24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:src="@android:drawable/ic_menu_revert"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="#D09FFF" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
