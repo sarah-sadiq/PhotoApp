@@ -1,9 +1,15 @@
 package com.example.photoapp.MainActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -26,8 +32,15 @@ import com.example.photoapp.SettingsActivity.SettingsActivity;
  */
 public class MainViewFragment extends Fragment implements MainContract.View {
 
+    private Cursor mMediaStoreCursor;
+
     MainContract.Presenter mPresenter;
     ImageView imageView;
+    Button keepButton;
+    Button deleteButton;
+    Button undoButton;
+    Button albumsButton;
+    Button shareButton;
 
     public MainViewFragment() {
         // Required empty public constructor
@@ -56,36 +69,37 @@ public class MainViewFragment extends Fragment implements MainContract.View {
         View root = inflater.inflate(R.layout.fragment_main_view, container, false);
 
         imageView = root.findViewById(R.id.ivPhotoCard);
+
         
-        Button keepButton = root.findViewById(R.id.btKeep);
+        keepButton = root.findViewById(R.id.btKeep);
         keepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO
             }
         });
-        Button deleteButton = root.findViewById(R.id.btDelete);
+        deleteButton = root.findViewById(R.id.btDelete);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO
             }
         });
-        Button undoButton = root.findViewById(R.id.btUndo);
+        undoButton = root.findViewById(R.id.btUndo);
         undoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO
             }
         });
-        Button albumsButton = root.findViewById(R.id.btAlbum);
+        albumsButton = root.findViewById(R.id.btAlbum);
         albumsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO
             }
         });
-        Button shareButton = root.findViewById(R.id.btShare);
+        shareButton = root.findViewById(R.id.btShare);
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,5 +149,20 @@ public class MainViewFragment extends Fragment implements MainContract.View {
         Intent settingsIntent = new Intent();
         settingsIntent.setClass(getActivity(), SettingsActivity.class);
         startActivity(settingsIntent);
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    private Cursor swapCursor(Cursor cursor) {
+        if(mMediaStoreCursor == cursor) {
+            return null;
+        }
+        Cursor oldCursor = mMediaStoreCursor;
+        this.mMediaStoreCursor = cursor;
+        if (cursor != null) {
+            notifyDataSetChanged();
+        }
     }
 }
